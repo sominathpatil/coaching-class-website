@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welldone Coaching Institute</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <script src="script.js"></script>
+<body>
+    <header>
+        <button class="menu-toggle">☰</button>
+        <div class="logo"> <img src="Image/logo.png" alt="Coaching Class Logo"> </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#testimonials">Testimonials ▼</a>
+                    <ul class="dropdown">
+                        <li><a href="#reviews">Student & Parent Review</a></li>
+                        <li><a href="#success">Alumni Success Story</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#more">More ▼</a>
+                    <ul class="dropdown">
+                        <li><a href="#admissions">Admissions</a></li>
+                        <li><a href="#resources">Student Resources</a></li>
+                        <li><a href="#blog">Blog/News</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#privacy">Privacy Policy & Terms</a></li>
+                    </ul>
+                </li>
+                <li><a href="#login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="name">
+        <marquee behavior="" direction="rtl" scrollamount="7">WELLDONE COACHING CLASSES</marquee>
+    </div>
+    <main>
+        <div class="slider">
+            <div class="slide"><img src="Image/slide1.jpeg" alt="Slide 1"></div>
+            <div class="slide"><img src="Image/slide2.jpeg" alt="Slide 2"></div>
+            <div class="slide"><img src="Image/slide3.jpg" alt="Slide 3"></div>
+        </div>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    let slides = document.querySelectorAll(".slide");
+    let index = 0;
+
+    function showNextSlide() {
+        slides[index].classList.remove("active");
+        index = (index + 1) % slides.length;
+        slides[index].classList.add("active");
+    }
+
+    // Show the first slide initially
+    slides[index].classList.add("active");
+
+    // Change slide every 3 seconds
+    setInterval(showNextSlide, 3000);
+});
+
+    </script>
+    </main>    
+    <main>
+</html>
