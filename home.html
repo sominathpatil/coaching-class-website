@@ -42,30 +42,50 @@
         <marquee behavior="" direction="rtl" scrollamount="7">WELLDONE COACHING CLASSES</marquee>
     </div>
     <main>
-        <div class="slider">
-            <div class="slide"><img src="Image/slide1.jpeg" alt="Slide 1"></div>
-            <div class="slide"><img src="Image/slide2.jpeg" alt="Slide 2"></div>
-            <div class="slide"><img src="Image/slide3.jpg" alt="Slide 3"></div>
+        <div class="slider-container">
+            <button class="prev-btn">❮</button>
+            <div class="slider">
+                <div class="slides">
+                    <!-- Slide 1 -->
+                    <div class="slide">
+                        <div class="content">
+                            <h2>Get Ready to Ace <br><span class="highlight">NEET | IIT-JEE | Foundation</span></h2>
+                            <p>With Our Intensive Training Courses</p>
+                            <button class="cta-btn">Join Us</button>
+                        </div>
+                        <div class="image">
+                            <img src="Image/8.jpg" alt="Slide 1">
+                        </div>
+                    </div>
+    
+                    <!-- Slide 2 -->
+                    <div class="slide">
+                        <div class="content">
+                            <h2>Expert Faculty <br><span class="highlight">For Competitive Success</span></h2>
+                            <p>Guiding students with proven methods.</p>
+                            <button class="cta-btn">Learn More</button>
+                        </div>
+                        <div class="image">
+                            <img src="Image/teaching.webp" alt="Slide 2">
+                        </div>
+                    </div>
+    
+                    <!-- Slide 3 -->
+                    <div class="slide">
+                        <div class="content">
+                            <h2>Success Stories <br><span class="highlight">Rank Holders Every Year</span></h2>
+                            <p>Our students achieve top ranks consistently.</p>
+                            <button class="cta-btn">See Results</button>
+                        </div>
+                        <div class="image">
+                            <img src="Image/success.avif" alt="Slide 3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="next-btn">❯</button>
         </div>
-    <script>
-document.addEventListener("DOMContentLoaded", function () {
-    let slides = document.querySelectorAll(".slide");
-    let index = 0;
+    </main>
 
-    function showNextSlide() {
-        slides[index].classList.remove("active");
-        index = (index + 1) % slides.length;
-        slides[index].classList.add("active");
-    }
-
-    // Show the first slide initially
-    slides[index].classList.add("active");
-
-    // Change slide every 3 seconds
-    setInterval(showNextSlide, 3000);
-});
-
-    </script>
-    </main>    
-    <main>
+</body>
 </html>
