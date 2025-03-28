@@ -19,3 +19,60 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Select all dropdowns
+    let dropdowns = document.querySelectorAll(".dropdown");
+
+    // Function to close all dropdowns
+    function closeDropdowns() {
+        dropdowns.forEach(dropdown => {
+            dropdown.style.display = "none";
+        });
+    }
+
+    // Toggle dropdown menu on click
+    document.querySelectorAll("nav > ul > li").forEach(item => {
+        item.addEventListener("click", function (event) {
+            event.stopPropagation(); // Prevent immediate closure when clicking inside
+            let dropdown = this.querySelector(".dropdown");
+            if (dropdown) {
+                let isOpen = dropdown.style.display === "block";
+                closeDropdowns(); // Close all before opening new one
+                dropdown.style.display = isOpen ? "none" : "block";
+            }
+        });
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener("click", function () {
+        closeDropdowns();
+    });
+});
+
+//slide
+document.addEventListener("DOMContentLoaded", function () {
+    let slides = document.querySelector(".slides");
+    let index = 0;
+
+    function showSlide() {
+        slides.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    document.querySelector(".next-btn").addEventListener("click", function () {
+        index = (index + 1) % slides.children.length;
+        showSlide();
+    });
+
+    document.querySelector(".prev-btn").addEventListener("click", function () {
+        index = (index - 1 + slides.children.length) % slides.children.length;
+        showSlide();
+    });
+
+    // Auto-slide every 3 seconds
+    setInterval(function () {
+        index = (index + 1) % slides.children.length;
+        showSlide();
+    }, 3000);
+});
+
