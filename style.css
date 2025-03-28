@@ -18,7 +18,7 @@ header {
 
 /* Logo - Align Left */
 .logo {
-    margin-right: auto; /* Push everything else to the right */
+    margin-right: auto;
 }
 
 .logo img {
@@ -26,9 +26,9 @@ header {
     margin : 3px 0px 0px 20px;
 }
 
-/* Menu Toggle Button (☰) */
+/* Menu Toggle Button*/
 .menu-toggle {
-    margin: 0px -350px 0px 330px;
+    margin: 0px -360px 0px 340px;
     display: none;
     font-size: 24px;
     cursor: pointer;
@@ -103,7 +103,7 @@ nav ul li a:hover {
 }
 .name {
     width: 100%;
-    background-color: black; /* Background color */
+    background-color: white; /* Background color */
     padding: 15px 0; /* Add padding */
     text-align: center;
     font-family: algerian;
@@ -112,39 +112,124 @@ nav ul li a:hover {
 .name marquee {
     font-size: 25px;
     font-weight: bold;
-    color: white;
+    color: green;
     text-transform: uppercase;
 }
-.slider {
+/* General Styles */
+html, body {
+    margin: 0;
+    padding: 0;
     width: 100%;
-    height: 500px;  /* Adjust height as needed */
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Slider Container */
+.slider-container {
     position: relative;
+    width: 100%;
+    height: 750px;
     overflow: hidden;
-    background: #ccc; /* Add fallback background */
 }
 
+/* Slides Wrapper */
+.slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Individual Slide */
 .slide {
+    display: flex;
+    flex: 0 0 100%;
     width: 100%;
     height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 50px;
+    background: lightseagreen;
+    color: white;
+    position: relative;
+}
+
+/* Left Text Content */
+.content {
+    flex: 1;
+    padding: 50px;
+    max-width: 50%;
+    z-index: 2;
+}
+
+.content h2 {
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.highlight {
+    color: #ffd700;
+}
+
+.content p {
+    font-size: 40px;
+    text-align: center;
+}
+
+.cta-btn {
+    background-color: white;
+    color: #002d80;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    margin: 20px 75px;
+}
+
+.cta-btn:hover {
+    background-color: #ffd700;
+}
+
+/* Right Image Content */
+.image {
+    flex: 1;
+    max-width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.image img {
+    padding: 10px;
+    width: 650px;
+    height: 550px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Navigation Buttons */
+.prev-btn, .next-btn {
     position: absolute;
-    opacity: 0;
-    transition: opacity 2s ease-in-out;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+    border: none;
+    padding: 15px 20px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
 }
 
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image fits properly */
-}
-
-/* Show the first image */
-.slide.active {
-    opacity: 1;
-}
-
+.prev-btn { left: 20px; }
+.next-btn { right: 20px; }
 
 /* Mobile View */
-@media screen and (max-width: 810px) {
+@media screen and (max-width: 600px) {
     .menu-toggle {
         display: block;
     }
@@ -183,26 +268,79 @@ nav ul li a:hover {
         width: 100%;
     }
     nav ul li a:hover {
-        width: 100%;
-        border-size: 10px;
+        border: 1px solid orange;
+        color: black;
+        background-color: orange;
+        border-radius: 15px;
         
- 
     }
     
     .dropdown {
         position: relative;
         width: 10px;
         background-color: #004080;
+        
     }
     .dropdown.show {
         display: block;
         height: auto;
     }
-    .slider {
-        height: 170px; /* Smaller height for mobile */
+    
+    .slider-container {
+        height: auto; /* Allow height to adjust dynamically */
+        min-height: 600px; /* Ensure enough space */
     }
 
-    .slide img {
-        object-fit :cover; /* Ensure full image visibility */
+    /* Stack Content & Image Vertically */
+    .slide {
+        flex-direction: column;
+        text-align: center;
+        padding: 4px;
+        height: auto; /* Make each slide adjust to content */
+        min-height: 600px; /* Increase minimum height */
     }
+
+    /* Adjust Text Content */
+    .content {
+        max-width: 100%;
+        padding: 5px 0px 0px 0px;
+    }
+
+    .content h2 {
+        font-size: 25px;
+    }
+
+    .content p {
+        font-size: 18px;
+    }
+
+    .cta-btn {
+        font-size: 18px;
+        padding: 14px 30px;
+    }
+
+    /* Adjust Image Size for Mobile */
+    .image {
+        max-width: 100%;
+        text-align: center;
+        margin-top: -150px;
+    }
+
+    .image img {
+        width: 95%;
+        height: auto;
+        max-height: 350px; /* Increase image height */
+        object-fit: contain;
+    }
+
+    /* Resize Navigation Buttons */
+    .prev-btn, .next-btn {
+        font-size: 15px;
+        padding: 12px 18px;
+        top: 50%;
+        background : none;
+    }
+
+    .prev-btn { left: 15px; }
+    .next-btn { right: 15px; }
 }
