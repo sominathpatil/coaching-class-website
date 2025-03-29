@@ -1,3 +1,4 @@
+//menu toggle button in android
 document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.querySelector(".menu-toggle");
     const navMenu = document.querySelector("nav");
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+//dropdown option
 document.addEventListener("DOMContentLoaded", function () {
     // Select all dropdowns
     let dropdowns = document.querySelectorAll(".dropdown");
@@ -50,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-//slide
+//slide changing one by one
 document.addEventListener("DOMContentLoaded", function () {
     let slides = document.querySelector(".slides");
     let index = 0;
